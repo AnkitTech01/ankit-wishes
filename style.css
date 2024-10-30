@@ -1,0 +1,118 @@
+/* style.css */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: #0e0b16;
+    color: #ffffff;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.input-section {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.wish-section {
+    text-align: center;
+    position: relative;
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+.video {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Confetti & Sparkles */
+.sparkle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%; /* Makes sparkles circular */
+    opacity: 0.8;
+    animation: sparkle 0.5s linear infinite; /* Shorter animation duration for sparkles */
+    animation: fall linear infinite;
+}
+
+#username {
+    padding: 10px;
+    width: 200px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #FF5722;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #e64a19;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fireworks {
+    position: absolute;
+    top: 20%;
+    width: 100%;
+    height: 80%;
+    background: url('  ') center center/cover no-repeat;
+    z-index: -1;
+}
+
+.wish-text {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    line-height: 1.5;
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0; transform: scale(1.5); } /* Sparkles grow in size */
+}
+
+@keyframes fall {
+    0% { transform: translateY(-100vh) rotate(0); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+/* Diya Animation */
+.diya {
+    position: absolute;
+    bottom: 20px;
+    width: 60px;
+    height: 60px;
+    background: url('https://em-content.zobj.net/source/apple/232/diya-lamp_1fa94.png') no-repeat center;
+    background-size: cover;
+    animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+    0% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+    100% { opacity: 0.7; transform: scale(1); }
+}
